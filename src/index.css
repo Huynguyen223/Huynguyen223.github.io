@@ -1,0 +1,75 @@
+@import "tailwindcss";
+
+:root {
+  --font-logo: 'Playfair Display', Georgia, serif;
+  --font-heading: 'Raleway', sans-serif;
+  --font-body: 'Raleway', sans-serif;
+
+  --clr-primary: #7f1416;
+  --clr-primary-hover: #5f0f11;
+  --clr-accent: #396d34;
+  --clr-accent-red: #be1d2c;
+  --clr-bg: #fafaf9;
+  --clr-bg-alt: #f5f5f4;
+  --clr-surface: #ffffff;
+  --clr-border: #e7e5e4;
+  --clr-text: #292524;
+  --clr-text-muted: #57534e;
+  --clr-text-light: #a8a29e;
+
+  /* Dark / brown section text — modified to bright theme scheme */
+  --clr-dark-text: #1c1917;
+  /* warm off-white  */
+  --clr-dark-muted: #44403c;
+  /* golden tan     */
+  --clr-dark-faint: #78716c;
+  /* visible on dark bg  */
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Force every element to inherit body font — prevents Tailwind preflight from
+   resetting to system sans-serif on any page or component */
+*:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6) {
+  font-family: inherit;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--clr-bg);
+  color: var(--clr-text);
+  font-size: 16px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* All heading tags always use heading font */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.font-heading {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Ensure inputs / buttons inherit body font */
+input,
+textarea,
+select,
+button {
+  font-family: var(--font-body);
+}

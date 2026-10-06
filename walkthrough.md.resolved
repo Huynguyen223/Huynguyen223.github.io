@@ -1,0 +1,84 @@
+# NAGROUP Spice — Session Walkthrough
+
+## What Was Done
+
+### 1. 🖋️ Fonts & Color Palette
+- **Fonts**: Switched to `Playfair Display` (headings) + `Raleway` (body) for a premium editorial feel
+- **Global reset** added to enforce font consistency across all pages/routes
+- **Color palette** (CSS variables): amber `#92400e`, warm cream `#faf7f2`, golden tan for dark sections
+- New `--clr-dark-text`, `--clr-dark-muted`, `--clr-dark-faint` variables for readable text on dark/brown backgrounds
+
+### 2. 🔗 Navbar Routing — All Fixed
+| Nav Link | Route |
+|---|---|
+| Home | `/` |
+| Export Products | `/products` |
+| News | `/articles` |
+| Contact Us | `/contact` |
+
+- **Header** redesigned: top contact bar (phone + email), animated hover underlines, "Get a Quote" CTA button
+- **Category tiles** on homepage now link correctly: `/category/cinnamon`, `/category/ginger`, `/category/pepper`, `/category/star-anise`, `/category/turmeric`
+
+### 3. 📂 Category Pages (`/category/:slug`)
+Each spice category now has a dedicated page with:
+- Dark hero banner + breadcrumb
+- Sidebar with all categories + product counts
+- Filtered product grid
+
+### 4. 📄 Product Detail Pages — All 12 Products
+Every product (`/products/:slug`) now shows:
+- Product image + name, category, FOB price
+- **Description** tab (English only — removed Vietnamese "Mô tả")
+- Full **Quick Details** table (15–25 spec rows)
+- **Container Storage / Shelf Life** panel
+- **Packaging, Shipping & Delivery Time** panel
+- **For More Information** checklist with ✓ bullets
+- **Related Products** with **Read More** buttons (replaced "Đọc tiếp")
+
+Products enriched: Cigarettes Cassia, Cassia Powder, Cassia Broken, Whole Cassia, Ground Pepper, White Pepper, Black Pepper, Turmeric Powder, Organic Cayenne Powder, Madras Curry Powder, Cinnamon Powder, Granulated Garlic
+
+### 5. 🚢 Global Shipping Section
+- **"Discuss Container Loads"** button now links directly to `/contact`
+
+### 6. 🦶 Footer Redesign
+Inspired by XStore Spice House reference:
+- **Top CTA strip** — "Ready to Source Premium Vietnamese Spices?" + amber "Get a Quote" button
+- **Brand column** — NAGROUP SPICE logo, tagline, address, phone, email, social icons (Facebook, Instagram, YouTube, Twitter)
+- **3 link columns** — Our Story / Categories / Support
+- **Bottom bar** — copyright, Privacy Policy, Terms, Contact
+
+### 7. 🏷️ Branding
+- **Browser tab**: `NAGROUP Spice - Excite your palate`
+- **Logo**: `NAGROUP SPICE` / *Excite your palate*
+
+### 8. 🆕 New Pages Created
+| Page | Path |
+|---|---|
+| Products List | `/products` |
+| Category Page | `/category/:slug` |
+| Articles | `/articles` |
+| Contact + Enquiry Form | `/contact` |
+
+### 9. 📦 Git
+All changes committed and pushed to `origin/main` (GitHub), ready for Cloudflare Pages deployment.
+
+---
+
+## Key Files Modified
+
+| File | Change |
+|---|---|
+| [src/index.css](file:///home/eggie/projects/nagspice/src/index.css) | Fonts (Playfair + Raleway), CSS variables, global reset |
+| [src/App.tsx](file:///home/eggie/projects/nagspice/src/App.tsx) | Added routes for `/products`, `/category/:slug`, `/articles`, `/contact` |
+| [src/components/layout/Header.tsx](file:///home/eggie/projects/nagspice/src/components/layout/Header.tsx) | NAGROUP SPICE branding, navbar links, contact bar |
+| [src/components/layout/Footer.tsx](file:///home/eggie/projects/nagspice/src/components/layout/Footer.tsx) | Full redesign with 5-column layout, social icons, CTA strip |
+| [src/components/sections/GlobalShippingSection.tsx](file:///home/eggie/projects/nagspice/src/components/sections/GlobalShippingSection.tsx) | CTA → `/contact` link |
+| [src/components/sections/CategoryRow.tsx](file:///home/eggie/projects/nagspice/src/components/sections/CategoryRow.tsx) | Fixed category hrefs |
+| [src/components/sections/HeroSection.tsx](file:///home/eggie/projects/nagspice/src/components/sections/HeroSection.tsx) | Updated fonts/colors |
+| [src/data/mockData.ts](file:///home/eggie/projects/nagspice/src/data/mockData.ts) | All 12 products enriched with full spec data |
+| [src/types/index.ts](file:///home/eggie/projects/nagspice/src/types/index.ts) | Extended [Product](file:///home/eggie/projects/nagspice/src/types/index.ts#9-28) interface with detail fields |
+| [src/app/products/[slug]/page.tsx](file:///home/eggie/projects/nagspice/src/app/products/%5Bslug%5D/page.tsx) | Full redesign: tabs, spec table, panels, related products |
+| [src/app/category/[slug]/page.tsx](file:///home/eggie/projects/nagspice/src/app/category/%5Bslug%5D/page.tsx) | **New** — category listing page |
+| [src/app/products/page.tsx](file:///home/eggie/projects/nagspice/src/app/products/page.tsx) | **New** — all products listing |
+| [src/app/articles/page.tsx](file:///home/eggie/projects/nagspice/src/app/articles/page.tsx) | **New** — news/articles listing |
+| [src/app/contact/page.tsx](file:///home/eggie/projects/nagspice/src/app/contact/page.tsx) | **New** — contact + enquiry form |
